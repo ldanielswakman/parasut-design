@@ -1,0 +1,12 @@
+body {
+  font-family: Europa,"Avenir Next",Avenir,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+header {
+  -webkit-box-shadow: 0 3px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 3px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 3px rgba(0, 0, 0, 0.25);
+}
+
+#parasut-logo .primary { fill: #FF6B5E; }
+#parasut-logo .secondary { fill: #9F5A50; }
