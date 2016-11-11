@@ -8,5 +8,22 @@ header {
   box-shadow: 0 3px rgba(0, 0, 0, 0.25);
 }
 
-#parasut-logo .primary { fill: #FF6B5E; }
-#parasut-logo .secondary { fill: #9F5A50; }
+header .menu {
+  display: block;
+  overflow: scroll;
+  opacity: 0.5;
+  white-space: nowrap;
+}
+
+#parasut-logo .primary { fill: #3CD1A8; }
+#parasut-logo .secondary { fill: #5D7385; }
+
+
+/* Links to article */
+.link-article p {
+  color: #5D7385; /* c-text-mediumBlue; */
+}
+.link-article:hover h2,
+.link-article:hover p {
+  color: #3CD1A8;
+}
