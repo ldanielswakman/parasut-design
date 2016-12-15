@@ -8,11 +8,12 @@ function updateStaticCache() {
         .then( cache => {
             // These items won't block the installation of the Service Worker
             cache.addAll([
-                '/manifest.json'
+                '/calculator/manifest.json'
             ]);
             // These items must be cached for the Service Worker to complete installation
             return cache.addAll([
                 '/',
+                '/calculator/',
             ]);
         });
 }
