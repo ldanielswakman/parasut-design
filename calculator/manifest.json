@@ -1,9 +1,0 @@
-{
-    "lang": "tr",
-    "short_name": "Paraşüt",
-    "name": "Paraşüt Serbest Hesaplama",
-    "start_url": "/calculator/",
-    "display": "standalone",
-    "background_color": "#5D7385",
-    "theme_color": "#FF6B5E"
-}
