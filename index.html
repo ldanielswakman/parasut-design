@@ -12,6 +12,8 @@
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
   </head>
 
   <body>
@@ -39,6 +41,22 @@
         </div>
       </div>
     </header>
+
+    <section class="c-bg-coolGray u-pa8"> 
+      <h4>Medium Posts</h4>
+      <script>
+        // $('#article_wrapper').
+        $.ajax({
+          url: "http://ldaniel.eu/parasut-medium/",
+          type: 'GET',
+          crossDomain: true,
+          dataType: 'json',
+          success: function() { $('#article_wrapper').html("Success"); },
+          error: function() { $('#article_wrapper').html('Failed!'); }
+        });
+      </script>
+      <div id="article_wrapper"></div>
+    </section>
 
     <section class="c-bg-coolGray u-pv4"> 
 
