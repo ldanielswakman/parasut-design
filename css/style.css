@@ -1,5 +1,10 @@
 body {
   font-family: Europa,"Avenir Next",Avenir,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+body > #article_wrapper {
+  flex-grow: 1;
 }
 
 header {
