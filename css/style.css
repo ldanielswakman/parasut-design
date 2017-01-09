@@ -32,3 +32,8 @@ header .menu {
 .link-article:hover p {
   color: #3CD1A8;
 }
+
+a.link-article:visited h2,
+a.link-article:visited p {
+  color: #B8C2C9 !important;
+}

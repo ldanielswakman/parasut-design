@@ -27,7 +27,35 @@
           dataType: 'json',
           success: function(data) {
             $('#article_wrapper').html('');
-            $posts = data['payload']['references']['Post'];
+
+            $posts = (typeof(data['payload']['posts']) != "undefined") ? data['payload']['posts'] : $posts = data['payload']['references']['Post'];
+
+            // Check tags and filter for
+            $allowed_tags = ['design', 'product'];
+            $filtered_posts = [];
+            $.each($posts, function(i) {
+
+              $post = $posts[i];
+
+              $.each($post['virtuals']['tags'], function(j) {
+                $tag = $post['virtuals']['tags'][j];
+                $tag_found = false;
+                $.each($allowed_tags, function(k) {
+                  if ($tag['name'].toLowerCase().indexOf($allowed_tags[k]) !== -1) {
+                    $tag_found = true;
+                    $filtered_posts.push($post);
+                    return false;
+                  }
+                });
+                if ($tag_found && $tag_found == true) { return false }
+              });
+
+            });
+            if ($filtered_posts.length > 0) {
+              $posts = $filtered_posts;
+            }
+
+            // Retrieve and display posts
             $.each($posts, function(i) {
 
               $post = $posts[i];
@@ -56,7 +84,7 @@
             });
           },
           error: function() {
-            $parent.html('Could not retrieve posts at this time');
+            $parent.html('<div class="u-textCenter c-text-lightGray">Could not retrieve posts at this time</div>');
           }
         });
 
@@ -91,7 +119,7 @@
       </div>
     </header>
 
-    <section class="c-bg-coolGray u-pv4" id="article_wrapper">
+    <section class="c-bg-coolGray u-pt4" id="article_wrapper">
 
       <div class="u-textCenter">Loading...</div>
 
